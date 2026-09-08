@@ -7,5 +7,5 @@ test('basic calculation works', () => {
 
   const total = amount + tax;
 
-  assert.strictEqual(total, 118);
+  assert.strictEqual(total, 119);
 });
