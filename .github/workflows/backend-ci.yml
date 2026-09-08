@@ -36,4 +36,6 @@ jobs:
 
       - name: Start backend application
         working-directory: backend
+        env:
+            MONGODB_URI: ${{ secrets.MONGO_URI }}
         run: npm start &
