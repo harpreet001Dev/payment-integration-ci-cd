@@ -33,3 +33,7 @@ jobs:
       - name: Run tests
         working-directory: backend
         run: npm test
+
+      - name: Start backend application
+        working-directory: backend
+        run: npm start &
