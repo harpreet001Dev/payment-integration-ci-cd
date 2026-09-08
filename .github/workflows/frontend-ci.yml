@@ -36,7 +36,7 @@ jobs:
 
             - name: Start frontend
               working-directory: frontend
-              run: npm run preview -- --host 0.0.0.0 &
+              run: nohup npm run preview -- --host 0.0.0.0 > frontend.log 2>&1 &
 
             - name: Check frontend
               run: curl --fail http://localhost:4173
