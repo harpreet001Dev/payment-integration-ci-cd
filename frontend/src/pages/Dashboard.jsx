@@ -6,6 +6,7 @@ export default function Dashboard() {
     const [amount, setAmount] = useState(10);
     const [idempotencyKey, setIdempotencyKey] = useState(null);
 
+    //payment point
     const payAmount = async () => {
         try {
             let key = idempotencyKey;
