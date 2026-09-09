@@ -48,3 +48,12 @@ jobs:
     
       - name: Check Backend Health
         run: curl --fail http://localhost:3000/health
+
+  deploy:
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy backend to Render
+        run: curl --fail --request POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
