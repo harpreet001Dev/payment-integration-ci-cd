@@ -57,3 +57,9 @@ jobs:
     steps:
       - name: Deploy backend to Render
         run: curl --fail --request POST --silent --show-error --output /dev/null "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+      - name: Wait for Render deployment
+        run: sleep 30
+      
+      - name: Verify backend deployment
+        run: curl --fail https://payment-integration-ci-cd.onrender.com/health
